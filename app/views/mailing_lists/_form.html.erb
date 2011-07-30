@@ -1,0 +1,27 @@
+<%= form_for @mailing_list do |f| %>
+  <% unless @mailing_list.errors.blank? %>
+    <div class="form-error">
+      <% @mailing_list.errors.each do |elm, msg| %>
+        <p><%= t(elm.to_s) %> <%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <p>
+    <%= f.check_box :general %>
+    <%= f.label :general, t('.general_type'), :class => '' %>
+    <br />
+    <%= f.check_box :events %>
+    <%= f.label :events, t('.events_type'), :class => '' %>
+  </p>
+  <div class="field">
+    <%= f.label :email, t('.put_your_email'), :class => 'placeholder-fallback required' %>
+    <%= f.email_field :email, :placeholder => t('.put_your_email'), :required => 'required', :class => 'required email text' %><%= f.submit t('.sign_in') %>
+  </div>
+
+  <p class="msg info">
+    <img alt="info icon" src="/images/s.gif" class="ui-icon ui-icon-info" />
+    <%= t('mailing_list.info_privacy') %>
+    <br /><br />
+    <%= t('mailing_list.info_logout') %>
+  </p>      
+<% end %>

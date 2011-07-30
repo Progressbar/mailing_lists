@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @mailing_list.email %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @mailing_list.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Password</h1>
+    <p>
+      <%=raw @mailing_list.password %>
+    </p>
+  </section>
+  <section>
+    <h1>General</h1>
+    <p>
+      <%=raw @mailing_list.general %>
+    </p>
+  </section>
+  <section>
+    <h1>Events</h1>
+    <p>
+      <%=raw @mailing_list.events %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="mailing_lists">
+      <% @mailing_lists.each do |mailing_list| %>
+        <li>
+          <%= link_to mailing_list.email, mailing_list_path(mailing_list) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

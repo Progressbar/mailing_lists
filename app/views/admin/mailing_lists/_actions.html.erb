@@ -1,0 +1,28 @@
+<ul>
+  <% if Admin::MailingListsController.searchable? %>
+    <li>
+      <%= render :partial => "/shared/admin/search",
+                  :locals => {
+                    :url => admin_mailing_lists_path
+                  } %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), new_admin_mailing_list_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? and Admin::MailingListsController.sortable? and MailingList.count > 1 %>
+  <li>
+    <%= link_to t('.reorder', :what => "Mailing Lists"),
+                 admin_mailing_lists_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Mailing Lists"),
+                 admin_mailing_lists_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

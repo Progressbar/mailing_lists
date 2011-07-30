@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    mailing_lists:
+      title: Mailing Lists
+  admin:
+    mailing_lists:
+      actions:
+        create_new: Maak een nieuwe Mailing List
+        reorder: Wijzig de volgorde van de Mailing Lists
+        reorder_done: Klaar met het wijzingen van de volgorde van de Mailing Lists
+      records:
+        title: Mailing Lists
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Mailing Lists. Druk op 'Maak een nieuwe Mailing List' om de eerste aan te maken.
+      mailing_list:
+        view_live_html: Bekijk deze mailing list op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze mailing list
+        delete: Verwijder deze mailing list voor eeuwig
+  mailing_lists:
+    show:
+      other: Andere Mailing Lists

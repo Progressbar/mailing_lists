@@ -1,0 +1,18 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(mailing_list) -%>">
+  <span class='title'>
+    <%= mailing_list.email %>
+    <span class="preview">&nbsp;</span>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag("application_go.png"), mailing_list_path(mailing_list),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_mailing_list_path(mailing_list),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), admin_mailing_list_path(mailing_list),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'shared.admin.delete', :title => mailing_list.email),
+        :method => :delete %>
+  </span>
+</li>
