@@ -14,14 +14,13 @@
     <%= f.label :events, t('.events_type'), :class => '' %>
   </p>
   <div class="field">
-    <%= f.label :email, t('.put_your_email'), :class => 'placeholder-fallback required' %>
-    <%= f.email_field :email, :placeholder => t('.put_your_email'), :required => 'required', :class => 'required email text' %><%= f.submit t('.sign_in') %>
+    <%= f.label :email, t('.put_email'), :class => 'placeholder-fallback required' %>
+    <%= f.email_field :email, :placeholder => t('.put_email'), :required => 'required', :class => 'required email text' %><%= f.submit t('.sign_in') %>
   </div>
-
   <p class="msg info">
     <img alt="info icon" src="/images/s.gif" class="ui-icon ui-icon-info" />
-    <%= t('mailing_list.info_privacy') %>
+    <%= t('.info_privacy') %>
     <br /><br />
-    <%= t('mailing_list.info_logout') %>
+    <%= t('.info_logout') %>
   </p>      
 <% end %>

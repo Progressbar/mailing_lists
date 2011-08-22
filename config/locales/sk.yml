@@ -1,4 +1,4 @@
-en:
+sk:
   shared:
     admin:
       image_picker:
@@ -22,10 +22,10 @@ en:
         delete: Remove this mailing list forever
   mailing_lists:
     form:
-      title: Mailing list
-      general_type: 'General discussion'
-      events_type: 'If you want to be informed about Progressbar events'
-      put_email: 'Put your e-mail'
-      sign_in: 'Sign in'
-      info_privacy: 'E-mail address will be kept only for the purpose of the conference and will not be provided to third parties.'
-      info_logout: 'To unsubscribe from the mailing re-enter your e-mail.'
+      title: 'E-mailová konferencia'
+      general_type: 'Všeobecná diskusia (frekventovaná konferencia)'
+      events_type: 'Informácie o organizovaných Progressbar akciách'
+      put_email: 'Zadajte e-mail'
+      sign_in: 'Prihlásiť k odberu'
+      info_privacy: 'E-mailová adresa bude uchovávaná len pre potreby konferencie a nebude poskytnutá tretím stranám.'
+      info_logout: 'Pre odhlásenie z e-mailovej konferencie zadajte znovu váš e-mail.'
