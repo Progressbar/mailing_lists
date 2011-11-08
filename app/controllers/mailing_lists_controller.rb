@@ -15,38 +15,38 @@ class MailingListsController < ApplicationController
 
   def index
     flash[:success] = t('.events_mailinglist_subscription_success')
-    #    subscriber = MailingList.find_by_email(@mailing_list[:email])
-    #    # if subscriber not exits we create new and subcribe him where they want
-    #    if subscriber.nil?
-    #      if params[:mailing_list] && @mailing_list.valid?
-    #        self.subscribe_to_general if @mailing_list.general
-    #        self.subscribe_to_events if @mailing_list.events
-    #
-    #        @mailing_list.save
-    #        redirect_to :action => 'index'
-    #      end
-    #    else
-    #      # otherwise we try subscribe or unsubscribe him from what they want
-    #      if @mailing_list[:general]
-    #        if subscriber[:general]
-    #          subscriber.update_attributes(:general => false)
-    #          redirect_to GENERAL_MAILING_LIST_UNSUBSCRIBE_URL
-    #        else
-    #          subscriber.update_attributes(:general => true) if self.subscribe_to_general
-    #          redirect_to :action => 'index'
-    #        end
-    #      else
-    #        if @mailing_list[:events]
-    #          if subscriber[:events]
-    #            subscriber.update_attributes(:events => false)
-    #            redirect_to EVENTS_MAILING_LIST_UNSUBSCRIBE_URL
-    #          else
-    #            subscriber.update_attributes(:events => true) if self.subscribe_to_events
-    #            redirect_to :action => 'index'
-    #          end
-    #        end
-    #      end
-    #    end
+    subscriber = MailingList.find_by_email(@mailing_list[:email])
+    # if subscriber not exits we create new and subcribe him where they want
+    if subscriber.nil?
+      if params[:mailing_list] && @mailing_list.valid?
+        self.subscribe_to_general if @mailing_list.general
+        self.subscribe_to_events if @mailing_list.events
+
+        @mailing_list.save
+        redirect_to :action => 'index'
+      end
+    else
+      # otherwise we try subscribe or unsubscribe him from what they want
+      if @mailing_list[:general]
+        if subscriber[:general]
+          subscriber.update_attributes(:general => false)
+          redirect_to GENERAL_MAILING_LIST_UNSUBSCRIBE_URL
+        else
+          subscriber.update_attributes(:general => true) if self.subscribe_to_general
+          redirect_to :action => 'index'
+        end
+      else
+        if @mailing_list[:events]
+          if subscriber[:events]
+            subscriber.update_attributes(:events => false)
+            redirect_to EVENTS_MAILING_LIST_UNSUBSCRIBE_URL
+          else
+            subscriber.update_attributes(:events => true) if self.subscribe_to_events
+            redirect_to :action => 'index'
+          end
+        end
+      end
+    end
   end
 
   protected
