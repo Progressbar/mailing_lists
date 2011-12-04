@@ -1,5 +1,6 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
+  s.authors           = 'nospam.keram@gmail.com'
   s.name              = 'refinerycms-mailing_lists'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Mailing Lists engine for Refinery CMS'
